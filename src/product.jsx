@@ -2,6 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext"; // Import CartContext
 import bag from "./assets/bag.svg";
+import cartimg from "./assets/cart.svg";
 
 function Product() {
   const [products, setProducts] = useState([]);
@@ -34,7 +35,11 @@ function Product() {
           <span>
             <Link to="/cart">
               <button>
-                <img className="w-[2rem] hover:brightness-0 hover:invert" src={bag} alt="" />
+                <img
+                  className="w-[2rem] hover:brightness-0 hover:invert"
+                  src={bag}
+                  alt=""
+                />
               </button>
             </Link>
             <p className="inline">({cart.length})</p>
@@ -43,7 +48,10 @@ function Product() {
         <div className="flex flex-wrap justify-between gap-[2rem] pb-[3rem]">
           {products.map((product) => {
             return (
-              <div key={product.id} className="shadow-lg flex flex-col p-[1rem]">
+              <div
+                key={product.id}
+                className="shadow-lg flex flex-col p-[1rem]"
+              >
                 <img
                   className="w-[15rem] h-[16rem]"
                   src={product.image}
@@ -55,11 +63,7 @@ function Product() {
                     $ {product.price}
                   </p>
                   <button onClick={() => addToCart(product)}>
-                    <img
-                      className="w-[1.5rem]"
-                      src="src/assets/cart.svg"
-                      alt=""
-                    />
+                    <img className="w-[1.5rem]" src={cartimg} alt="" />
                   </button>
                 </span>
               </div>
