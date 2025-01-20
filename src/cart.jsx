@@ -27,7 +27,7 @@ function Cart() {
                 className="flex items-center justify-between mb-4 border-b pb-2"
               >
                 <div>
-                  <p className="font-medium">{item.name}</p>
+                  <p className="font-medium">{item.title}</p>
                   <p className="text-gray-600">Rs. {item.price}</p>
                 </div>
 
