@@ -10,7 +10,7 @@ export function CartProvider({ children }) {
     const productIndex = cart.findIndex((item) => item.id === product.id);
 
     if (productIndex !== -1) {
-      alert(`${product.name} already added to the cart!`);
+      alert(`${product.title} already added to the cart!`);
     } else {
       setCart([...cart, { ...product, quantity: 1 }]);
       setTotal(total + parseFloat(product.price)); // Use parseFloat
